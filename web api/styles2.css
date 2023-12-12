@@ -1,0 +1,82 @@
+/* styles.css */
+html,body{
+    background-image: url('https://img.freepik.com/free-vector/flat-design-travel-background_23-2149193475.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699574400&semt=ais');
+    background-size: 1500px 1500px;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    }
+
+header {
+    background: url('https://lh3.googleusercontent.com/p/AF1QipMY4SECudm0ShuTwwYapgPqlvFKoiXQS4dAd4U7=w1080-h608-p-no-v0') center/cover no-repeat;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}

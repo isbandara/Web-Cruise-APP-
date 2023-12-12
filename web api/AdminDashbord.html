@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+
+    <header>
+        <h1>User Management</h1>
+    </header>
+
+    <section class="user-form">
+        
+            <form action="#" method="post">      
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>    
+    
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" required>
+
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" required>
+
+                <label for="NIC">NIC:</label>
+                <input type="text" id="NIC" name="NIC" required>
+
+                <label for="userRole">User Role:</label>
+                <select id="userRole" name="userRole">            
+                    <option value="admin">Admin</option>
+                    <option value="travelAgent">Travel Agent</option>
+                    <option value="backofficeStaff">Backoffice Staff</option>                    
+                    <!-- Add more options as needed -->
+                </select>               
+                
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>    
+    
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+    
+                <button type="submit">Create Account</button>
+            </form>
+            
+    </section>
+    <section class="user-search">
+        <h2>Search Users</h2>
+        <input type="text" id="searchInput" placeholder="Enter username to search">
+        <button onclick="searchUsers()">Search</button>
+    </section>
+   
+    <section class="user-list">
+        <h2>User List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>NIC</th>
+                    <th>Email</th>
+                    <th>User Role</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>1234566v</td>
+                    <td>Admin</td>
+                    <td>john.doe@example.com</td>
+                    
+                </tr>
+                <tr>
+                    <td>Jane Doe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                    <td>36598456v</td>
+                    <td>User</td>
+                    <td>jane.doe@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="button">Edit</button>
+        <button type="button" class="button">Delete</button>
+    </section>
+
+    <footer>
+        &copy; 2023 User Management. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

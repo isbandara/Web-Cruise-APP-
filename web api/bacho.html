@@ -1,0 +1,53 @@
+<!-- backoffice.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice</title>
+    <link rel="stylesheet" href="styles8.css">
+</head>
+<body>
+
+    <header>
+        <h1>Backoffice</h1>
+    </header>
+
+    <section class="upload-section">
+        <h2>Bulk Upload</h2>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="csvFile" name="csvFile" accept=".csv" required>
+            <button type="button" onclick="uploadCSV()">Upload CSV</button>
+        </form>
+    </section>
+
+    <section class="update-section">
+        <h2>Update Product Details</h2>
+        <!-- Add Cruise, Activity, and Package update forms as needed -->
+        <!-- Example: -->
+        <form id="updateCruiseForm">
+            <label for="cruiseName">Cruise Name:</label>
+            <input type="text" id="cruiseName" name="cruiseName" required>
+            <!-- Add more fields as needed -->
+            <button type="button" onclick="updateCruise()">Update Cruise</button>
+        </form>
+    </section>
+
+    <section class="delete-section">
+        <h2>Delete Product</h2>
+        <!-- Add Cruise, Activity, and Package delete forms as needed -->
+        <!-- Example: -->
+        <form id="deleteCruiseForm">
+            <label for="cruiseID">Cruise ID:</label>
+            <input type="text" id="cruiseID" name="cruiseID" required>
+            <button type="button" onclick="deleteCruise()">Delete Cruise</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2023 Backoffice. All rights reserved.
+    </footer>
+
+    <script src="script3.js"></script>
+</body>
+</html>

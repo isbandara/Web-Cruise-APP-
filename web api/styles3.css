@@ -1,0 +1,136 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://img.freepik.com/free-vector/flat-design-travel-background_23-2149193475.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699574400&semt=ais') center/cover no-repeat fixed;
+}
+
+
+header {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwhYUaWIqswjla12qwF6O1zhnyTdnPcD7dIZDz7daQ4pfc-gMixG-6B076_H_Mo48CbU&usqp=CAU') center/cover no-repeat;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    background-color: #666;
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffcc00;
+}
+
+.dashboard, .add-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    color: #333;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.scrollable-table-container {
+    overflow: auto;
+    max-height: 300px; /* Set the maximum height as needed */
+}
+.tab-content {
+            display: none;
+        }
+
+        .active-tab {
+            display: block;
+        }
+
+        .scrollable-table-container {
+            overflow: auto;
+            max-height: 300px; /* Set the maximum height as needed */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #171729;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1b1414;
+        }
+
+        /* Style for vertical buttons */
+        .vertical-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Adjust the gap between buttons as needed */
+        }
+
+        /* Style for each button */
+        .vertical-buttons button {
+            padding: 10px;
+        }
+   
+.scrollable-nav {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.scrollable-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.scrollable-nav li {
+    margin-right: 20px; /* Adjust the spacing between navigation items as needed */
+}
+
+.scrollable-nav a {
+    text-decoration: none;
+    color: black; /* Change the color as needed */
+    padding: 10px;
+    display: inline-block;
+}
+
+.scrollable-nav a:hover {
+    background-color: #ddd; /* Change the background color on hover as needed */
+}

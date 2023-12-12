@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruise Reservations</title>
+    <link rel="stylesheet" href="styles5.css">
+  
+</head>
+<body>
+
+    <header>
+        <h1>Cruise Reservations</h1>
+    </header>
+
+    <section class="search-form">
+        <h2>Search Cruises</h2>
+        <form action="#" method="post">
+            <label for="departure">Departure Destination:</label>
+            <input type="text" id="departure" name="departure" required>
+
+            <label for="arrival">Arrival Destination:</label>
+            <input type="text" id="arrival" name="arrival" required>
+
+            <label for="departureDate">Departure Date:</label>
+            <input type="date" id="departureDate" name="departureDate" required>
+
+            <label for="arrivalDate">Arrival Date:</label>
+            <input type="date" id="arrivalDate" name="arrivalDate" required>
+
+            <label for="deck">Deck:</label>
+            <input type="text" id="deck" name="deck">
+
+            <label for="cabinClass">Cabin Class:</label>
+            <select id="cabinClass" name="cabinClass">
+                <option value="standard">Standard</option>
+                <option value="deluxe">Deluxe</option>
+                <option value="suite">Suite</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <button type="submit">Search Cruises</button>
+        </form>
+    </section>
+
+    
+    
+    <section class="search-results">
+        <h2>Search Results</h2>
+        <div class="scrollable-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cruise Name</th>
+                        <th>Departure Destination</th>
+                        <th>Arrival Destination</th>
+                        <th>Departure Date</th>
+                        <th>Arrival Date</th>
+                        <th>Deck Number</th>
+                        <th>Cabin Class</th>
+                        <th>Price</th>
+                        <th>Rating</th>
+                        <th>Duration</th>
+                        <th>Cruise Provider</th>
+                        <th>Meal Preference</th>
+                        <th>Cabin Selection</th>
+                        <th>Book</th>
+                    </tr>
+                </thead>
+                <tbody id="cruiseTableBody">
+                    <!-- Add cruise details dynamically here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    
+
+    <script>
+        
+    
+    
+        var cruiseTableBody = document.getElementById("cruiseTableBody");
+    
+        cruiseData.forEach(function (data, index) {
+            var row = document.createElement("tr");
+            data.forEach(function (cellData) {
+                var cell = document.createElement("td");
+                cell.textContent = cellData;
+                row.appendChild(cell);
+            });
+    
+    
+            row.addEventListener("click", function () {
+                fillFormFields(data);
+            });
+    
+
+            var bookNowCell = document.createElement("td");
+            var bookNowLink = document.createElement("a");
+            bookNowLink.href = "#"; 
+            bookNowLink.className = "book-now-button";
+            bookNowLink.textContent = "Book Now";
+            bookNowLink.addEventListener("click", function (event) {
+                event.preventDefault(); 
+            });
+            bookNowCell.appendChild(bookNowLink);
+            row.appendChild(bookNowCell);
+    
+            cruiseTableBody.appendChild(row);
+        });
+    
+        function fillFormFields(data) {
+            var form = document.getElementById("cruiseBookingForm");
+    
+        
+            form.elements["firstName"].value = ""; // Clear previous data
+            form.elements["lastName"].value = ""; // Clear previous data
+            form.elements["nic"].value = ""; // Clear previous data
+            form.elements["email"].value = ""; // Clear previous data
+            form.elements["selectedPreference"].value = ""; // Clear previous data
+            form.elements["selectedCabin"].value = ""; // Clear previous data
+            form.elements["departure"].value = data[1];
+            form.elements["arrival"].value = data[2];
+            form.elements["departureDate"].value = data[3];
+            form.elements["arrivalDate"].value = data[4];
+            form.elements["deck"].value = data[5];
+            form.elements["cabinClass"].value = data[6];
+        }
+    </script>
+    
+    
+
+<section class="search-results">
+    <h2>Cruise Booking Form</h2>
+    <form id="cruiseBookingForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="nic">NIC (National Identity Card):</label>
+        <input type="text" id="nic" name="nic" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="preperances">Selected  preperance:</label>
+        <input type="text" id="preperances" name="preperances" required>
+
+        <label for="selcabin">Selected cabin:</label>
+        <input type="text" id="selcabin" name="selcabin" required>
+        
+        <label for="departure">Departure Destination:</label>
+        <input type="text" id="departure" name="departure" required>
+
+        <label for="arrival">Arrival Destination:</label>
+        <input type="text" id="arrival" name="arrival" required>
+
+        <label for="departureDate">Departure Date:</label>
+        <input type="date" id="departureDate" name="departureDate" required>
+
+        <label for="arrivalDate">Arrival Date:</label>
+        <input type="date" id="arrivalDate" name="arrivalDate" required>
+
+        <label for="deck">Deck:</label>
+        <input type="text" id="deck" name="deck">
+
+        <label for="cabinClass">Cabin Class:</label>
+        <select id="cabinClass" name="cabinClass">
+            <option value="standard">Standard</option>
+            <option value="deluxe">Deluxe</option>
+            <option value="suite">Suite</option>
+    
+        </select>
+
+        <button type="button" onclick="cruiseBooking()">Booking</button>
+
+        <label for="cruiseCartForm"> Add to cart :</label>
+
+        <button type="button" onclick="cruiseAddToCart()">Add To Cart</button>
+    </form>
+</section>
+    <footer>
+        &copy; 2023 Cruise Reservations. All rights reserved.
+    </footer>
+
+</body>
+</html>

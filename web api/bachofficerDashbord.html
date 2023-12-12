@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice Travel Staff Dashboard</title>
+    <link rel="stylesheet" href="styles3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="animations.css">
+
+    <script src="cruiseManagement.js"></script>
+    <script src="activityManagement.js"></script>
+    <script src="packageManagement.js"></script>
+
+    <style>
+       
+</style>
+</head>
+<body>
+    <script>
+        function showTab(tabId) {
+            // Hide all tab content
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active-tab');
+            });
+
+            // Show the selected tab content with animation
+            var selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active-tab');
+            }
+        }
+    </script>
+
+    <header>
+        <h1>Backoffice Travel Staff Dashboard</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showTab('add-cruise')">Add Cruise</a></li>
+            <li><a href="#" onclick="showTab('add-activities')">Add Activities</a></li>
+            <li><a href="#" onclick="showTab('add-packages')">Add Packages</a></li>
+        
+        </ul>
+    </nav>
+
+    <section class="dashboard">
+    
+        
+    
+        <div id="add-cruise" class="tab-content active-tab">
+         
+            <p>Add Cruise content goes here.</p>
+       
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruise Management</title>
+    <link rel="stylesheet" href="styles-cruise.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+
+    <header>
+        <h1>Cruise Management</h1>
+    </header>
+
+    <section class="cruise-form">
+        <h2>Add Cruise</h2>
+        <form id="addCruiseForm">
+            <label for="cruiseName">Cruise Name:</label>
+            <input type="text" id="cruiseName" name="cruiseName" required>
+
+            <label for="departureDestination">Departure Destination:</label>
+            <input type="text" id="departureDestination" name="departureDestination" required>
+
+            <label for="arrivalDestination">Arrival Destination:</label>
+            <input type="text" id="arrivalDestination" name="arrivalDestination" required>
+
+            <label for="departureDate">Departure Date:</label>
+            <input type="date" id="departureDate" name="departureDate" required>
+
+            <label for="arrivalDate">Arrival Date:</label>
+            <input type="date" id="arrivalDate" name="arrivalDate" required>
+
+            <label for="deckNumber">Deck Number:</label>
+            <input type="text" id="deckNumber" name="deckNumber" required>
+
+            <label for="cabinClass">Cabin Class:</label>
+            <select id="cabinClass" name="cabinClass">
+                <option value="standard">Standard</option>
+                <option value="deluxe">Deluxe</option>
+                <option value="suite">Suite</option>
+            </select>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="rating">Rating:</label>
+            <input type="number" id="rating" name="rating" step="0.1" required>
+
+            <label for="duration">Duration (in days):</label>
+            <input type="number" id="duration" name="duration" required>
+
+            <label for="cruiseProvider">Cruise Provider:</label>
+            <input type="text" id="cruiseProvider" name="cruiseProvider" required>
+
+            <label for="mealPreference">Meal Preference:</label>
+            <input type="text" id="mealPreference" name="mealPreference" required>
+
+            <label for="cabinSelection">Cabin Selection:</label>
+            <input type="text" id="cabinSelection" name="cabinSelection" required>
+
+            <button type="button" onclick="addCruise(),clearFormFields()">Add Cruise</button>
+        </form>
+    </section>
+
+    <section class="bulk-upload">
+        <h2>Bulk Upload CSV</h2>
+        <form id="cruiseuploadcsvForm" enctype="multipart/form-data">
+
+            <label for="cruiseuploadcsvForm">Upload file:</label>
+            <input type="file" id="cruiseuploadcsvForm" name="cruiseuploadcsvForm" accept=".csv" required>
+            <button type="button" onclick="cruiseuploadCSV()">Upload CSV</button>
+        </form>
+    </section>
+
+    <section class="cruise-search">
+        <h2>Search Cruise</h2>
+        <label for="searchCruise"> </label>
+        <input type="text" id="cCruiseName" placeholder="Enter username to search">
+        <p> </p>
+        <button onclick="searchCruise()">Search</button>
+    </section>
+   
+
+<div class="scrollable-table-container">
+    <table id="cruiseTable">
+        <thead>
+            <tr>
+         
+                <th>Reservation type</th>
+                <th>Cruise Name</th>
+                <th>Departure Destination</th>
+                <th>Arrival Destination</th>
+                <th>Departure Date</th>
+                <th>Arrival Date</th>
+                <th>Deck Number</th>
+                <th>Cabin Class</th>
+                <th>Price</th>
+                <th>Rating</th>
+                <th>Duration</th>
+                <th>Cruise Provider</th>
+                <th>Meal Preference</th>
+                <th>Cabin Selection</th>
+            </tr>
+        </thead>
+        <tbody id="cruiseTableBody1"></tbody>
+    </table>
+</div>
+<p> </p>
+
+<button type="button" class="button" onclick="updateCruise()">Update</button>
+<button type="button" class="button" onclick="deleteCruise()">Delete</button>
+
+<p> </p>
+    <footer>
+        &copy; 2023 Cruise Management. All rights reserved.
+    </footer>
+
+    <!-- <script src="script-cruise.js"></script> -->
+</body>
+</html>
+<!-- ------------------------Activity ----------------------------------------------------------------------- -->
+        </div>
+
+        <div id="add-activities" class="tab-content">
+
+            <p>Add Activities content goes here.</p>
+                   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruise Management</title>
+    <link rel="stylesheet" href="styles-cruise.css">
+</head>
+<body>
+
+    <header>
+        <h1>Cruise Management</h1>
+    </header>
+
+    <section class="cruise-form">
+        <h2>Add Cruise</h2>
+        <form id="addCruiseForm">
+
+            <label for="ActivityName">Cruise name:</label>
+            <input type="text" id="ActivityName" name="ActivityName" required>
+
+            <label for="departureDestination">Destination:</label>
+            <input type="text" id="departureDestination" name="departureDestination" required>
+
+            <label for="aDate">Date:</label>
+            <input type="date" id="aDate" name="aDate" required>
+
+            <label for="Activitytype">Activity type:</label>
+            <input type="text" id="Activitytype" name="Activitytype" required>
+
+            <label for="aRating">Rating:</label>
+            <input type="text" id="aRating" name="aRating" required>
+
+            <label for="aPrice">Price:</label>
+            <input type="text" id="aPrice" name="aPrice" required>
+
+            <label for="participants">Participants:</label>
+            <input type="text" id="participants" name="Participants" required>
+
+            <label for="Agelimit">Age limit of participants:</label>
+            <input type="text" id="Agelimit" name="Agelimit" required>
+    
+
+            <button type="button" onclick="addActivity(),clearFormFields()">Add Activity</button>
+        </form>
+    </section>
+
+    <section class="bulk-upload">
+        <h2>Bulk Upload CSV</h2>
+        <form id="bulkactivityuploadForm" enctype="multipart/form-data">
+
+            <label for="activitycsvFile">Upload file:</label>
+            <input type="file" id="activitycsvFile" name="csvFile" accept=".csv" required>
+            <button type="button" onclick="activityuploadCSV()">Upload CSV</button>
+        </form>
+
+    </section>
+    <section class="Add Cruise-search">
+        <h2>Search Activity</h2>
+
+        <label for="searchActivity"> </label>
+        <input type="text" id="searchActivity" placeholder="Enter activity name to search">
+        <p> </p>
+        <button onclick="searchActivity()">Search</button>
+
+    </section>
+
+    <div class="scrollable-table-container">
+        <table id="activityTable">
+            <thead>
+                <tr>
+                    <th>Activity Name</th>
+                    <th>Destination</th>
+                    <th>Date</th>
+                    <th> Activity Type</th>
+                    <th> Rating</th>
+                    <th>Price</th>
+                    <th>Participants</th>
+                    <th>Age limit of participants</th>
+                      
+            </thead>
+            <tbody id="activityTableBody2"></tbody>
+        </table>
+    </div>
+    <p> </p>
+    <button type="button" class="button" onclick="updateActivity()">Update</button>
+    <button type="button" class="button" onclick="deleteActivity()">Delete</button>
+
+<p> </p>
+    
+        <footer>
+            &copy; 2023 Cruise Management. All rights reserved.
+        </footer>
+    
+        <script src="script-cruise.js"></script>
+    </body>
+    </html>
+            </div>
+    
+<!-- -------------------Packages--------------------------------------------------------------------------- -->
+</body>
+</html>
+
+        </div>
+
+        <div id="add-packages" class="tab-content">
+            <!-- "Add Packages" tab here -->
+            <p>Add Packages content goes here.</p>
+           
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Management</title>
+    <link rel="stylesheet" href="styles-cruise.css">
+</head>
+<body>
+
+    <header>
+        <h1>Package Management</h1>
+    </header>
+
+    <section class="Package-form">
+        <h2>Add Packages</h2>
+        <form id="addPackageForm">
+
+            <label for="Packagename">Package name:</label>
+            <input type="text" id="Packagename" name="Packagename" required>
+
+            <label for="pDestination">Destination:</label>
+            <input type="text" id="pDestination" name="departureDestination" required>
+
+            <label for="pDuration">Duration:</label>
+            <input type="text" id="pDuration" name="packageDuration" required>
+
+            <label for="pNumber">Number of travelers:</label>
+            <input type="text" id="pNumber" name="NumberofYravelars" required>
+
+            <label for="pSpeciality"> Speciality:</label>
+            <input type="text" id="pSpeciality" name="Speciality" required>
+
+            <label for="pRating">Rating:</label>
+            <input type="text" id="pRating" name="Rating" required>
+
+            <label for="pPrice">Price:</label>
+            <input type="text" id="pPrice" name="Price" required>
+
+        
+            <button type="button" onclick="addPackages(),clearFormFields()">Add Package</button>
+        </form>
+    </section>
+
+    <section class="bulk-upload">
+        <h2>Bulk Upload CSV</h2>
+
+        <label for="csvFile"> </label>
+        <form id="packageuploadForm" enctype="multipart/form-data">
+
+            <label for="packageuploadForm">Upload file:</label>
+            <input type="file" id="packageuploadForm" name="packageuploadForm" accept=".csv" required>
+
+            <button type="button" onclick="packageuploadCSV()">Upload CSV</button>
+        </form>
+    </section>
+
+    <section class="Add Packages-search">
+        <h2>Search Packages</h2>
+
+        
+        <input type="text" id="searchPackage" placeholder="Enter package name to search">
+        <p> </p>
+        <button onclick="searchPackage()">Search</button>
+    </section>
+    
+<div class="scrollable-table-container">
+    <table id="packageTable">
+        <thead>
+            <tr>
+                <th>Package name</th>
+                <th> Destination</th>
+                <th> Duration</th>
+                <th> Number of travelers</th>
+                <th> Speciality</th>
+                <th>Rating</th>
+                <th>Price</th>
+               
+        </thead>
+        <tbody id="packageTableBody3"></tbody>
+    </table>
+</div>
+<p> </p>
+<button type="button" class="button"  onclick="updatePackage()">Update</button>
+<button type="button" class="button"  onclick="deletePackege()">Delete</button>
+
+<p> </p>
+    <footer>
+        &copy; 2023 Cruise Management. All rights reserved.
+    </footer>
+
+    <script src="script-cruise.js"></script>
+</body>
+</html>
+
+        </div>
+
+
+    </section>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tab content
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active-tab');
+            });
+
+            // Show the selected tab content
+            var selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active-tab');
+            }
+        }
+    </script>
+
+</body>
+</html>

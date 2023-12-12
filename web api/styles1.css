@@ -1,0 +1,60 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://img.freepik.com/free-vector/flat-design-travel-background_23-2149193475.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699574400&semt=ais') center/cover no-repeat fixed;
+}
+
+
+header {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjwhYUaWIqswjla12qwF6O1zhnyTdnPcD7dIZDz7daQ4pfc-gMixG-6B076_H_Mo48CbU&usqp=CAU') center/cover no-repeat;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+    color: #555;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

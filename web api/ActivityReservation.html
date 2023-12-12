@@ -1,0 +1,185 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Reservations</title>
+    <link rel="stylesheet" href="styles6.css">
+</head>
+<body>
+
+    <header>
+        <h1>Activity Reservations</h1>
+    </header>
+
+    <section class="search-form">
+        <h2>Search Activities</h2>
+        <form id="searchForm">
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="activityType">Type of Activity:</label>
+            <select id="activityType" name="activityType">
+                <option value="adventure">Adventure</option>
+                <option value="sightseeing">Sightseeing</option>
+                <option value="themePark">Theme Park</option>
+                <option value="tour">Tour</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <label for="starRating">Star Rating:</label>
+            <input type="number" id="starRating" name="starRating" min="1" max="5">
+
+            <button type="submit">Search Activities</button>
+        </form>
+    </section>
+
+
+    <section class="search-results">
+        <h2>Search Results</h2>
+        <div class="scrollable-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Activity name</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                        <th>Activity type</th>
+                        <th>Rating</th>
+                        <th>Price</th>
+                        <th>Participants</th>
+                        <th>Age limit</th>
+                        <th>Book</th>
+                            </tr>
+                </thead>
+                <tbody id="cruiseTableBody">
+                    <!-- Add cruise details dynamically here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    
+
+    <script>
+        // Sample data for the table
+        var cruiseData = [
+            ["Cruise 1", "Departure 1", "Arrival 1", "Date 1", "Date 2", "Deck 1", "Standard", "100"],
+            ["Cruise 2", "Departure 2", "Arrival 2", "Date 3", "Date 4", "Deck 2", "Deluxe", "150"],
+            // Add more cruise data as needed
+        ];
+    
+        // Populate the table with cruise data
+        var cruiseTableBody = document.getElementById("cruiseTableBody");
+    
+        cruiseData.forEach(function (data, index) {
+            var row = document.createElement("tr");
+            data.forEach(function (cellData) {
+                var cell = document.createElement("td");
+                cell.textContent = cellData;
+                row.appendChild(cell);
+            });
+    
+            // Add click event to fill form fields
+            row.addEventListener("click", function () {
+                fillFormFields(data);
+            });
+    
+            // Add "Book Now" button link in a new column
+            var bookNowCell = document.createElement("td");
+            var bookNowLink = document.createElement("a");
+            bookNowLink.href = "#"; // Add the appropriate link or action
+            bookNowLink.className = "book-now-button";
+            bookNowLink.textContent = "Book Now";
+            bookNowLink.addEventListener("click", function (event) {
+                event.preventDefault(); // Prevent the default link behavior
+                fillFormFields(data);
+            });
+            bookNowCell.appendChild(bookNowLink);
+            row.appendChild(bookNowCell);
+    
+            cruiseTableBody.appendChild(row);
+        });
+    
+        // Function to fill form fields with data
+        function fillFormFields(data) {
+            var form = document.getElementById("cruiseBookingForm");
+    
+            // Assuming the order of form fields matches the order in the data array
+            form.elements["firstName"].value = ""; // Clear previous data
+            form.elements["lastName"].value = ""; // Clear previous data
+            form.elements["nic"].value = ""; // Clear previous data
+            form.elements["email"].value = ""; // Clear previous data
+            form.elements["selectedPreference"].value = ""; // Clear previous data
+            form.elements["selectedCabin"].value = ""; // Clear previous data
+            form.elements["departure"].value = data[1];
+            form.elements["arrival"].value = data[2];
+            form.elements["departureDate"].value = data[3];
+            form.elements["arrivalDate"].value = data[4];
+            form.elements["deck"].value = data[5];
+            form.elements["cabinClass"].value = data[6];
+        }
+    </script>
+   <section class="search-results">
+    <h2>Cruise Booking Form</h2>
+    <form id="cruiseBookingForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="nic">NIC (National Identity Card):</label>
+        <input type="text" id="nic" name="nic" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="lastName">Selected  preperance:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="Selected cabi">Selected cabin:</label>
+        <input type="text" id="Selected cabi" name="Selected cabi" required>
+
+        <label for="Number">Number of paticepent:</label>
+        <input type="text" id="Number" name="Number" required>
+        
+        <label for="Maxsimam">Maxsimam age of Paticipent:</label>
+        <input type="text" id="Maxsimam" name="Maxsimam" required>
+
+        <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="activityType">Type of Activity:</label>
+            <select id="activityType" name="activityType">
+                <option value="adventure">Adventure</option>
+                <option value="sightseeing">Sightseeing</option>
+                <option value="themePark">Theme Park</option>
+                <option value="tour">Tour</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <label for="starRating">Star Rating:</label>
+            <input type="number" id="starRating" name="starRating" min="1" max="5">
+
+        <!-- Add more cruise booking fields as needed -->
+
+        <button type="submit">Booking</button>
+    </form>
+</section>
+
+
+    <footer>
+        &copy; 2023 Activity Reservations. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

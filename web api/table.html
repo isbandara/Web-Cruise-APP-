@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice Travel Staff Dashboard</title>
+    <link rel="stylesheet" href="styles3.css">
+    
+</head>
+<body>
+
+    <header>
+        <h1>Backoffice Travel Staff Dashboard</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showTab('add-cruise')">Add Cruise</a></li>
+            <li><a href="#" onclick="showTab('add-activities')">Add Activities</a></li>
+            <li><a href="#" onclick="showTab('add-packages')">Add Packages</a></li>
+            <!-- Add more navigation items as needed -->
+        </ul>
+    </nav>
+
+    <section class="dashboard">
+        <h2>Welcome, Backoffice Travel Staff!</h2>
+        
+        <!-- Tab content -->
+        <div id="add-cruise" class="tab-content active-tab">
+            <div class="scrollable-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cruise Name</th>
+                            <th>Departure Destination</th>
+                            <th>Arrival Destination</th>
+                            <th>Departure Date</th>
+                            <th>Arrival Date</th>
+                            <th>Deck Number</th>
+                            <th>Cabin Class</th>
+                            <th>Price</th>
+                            <th>Rating</th>
+                            <th>Duration</th>
+                            <th>Cruise Provider</th>
+                            <th>Meal Preference</th>
+                            <th>Cabin Selection</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cruiseTableBody">
+                        <!-- Cruise details will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- Additional content for "Add Cruise" tab goes here -->
+        </div>
+
+       
+    </section>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tab content
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active-tab');
+            });
+
+            // Show the selected tab content
+            var selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active-tab');
+                loadContent(tabId);
+            }
+        }
+
+        function loadContent(tabId) {
+            // Load content based on tabId
+            var contentContainer = document.getElementById(tabId);
+            var addCruiseTabContent = document.getElementById('add-cruise-tab').innerHTML;
+
+            // Check if the content needs to be loaded
+            if (tabId === 'add-cruise' && contentContainer.innerHTML.trim() === '') {
+                contentContainer.innerHTML = addCruiseTabContent;
+            }
+        }
+    </script>
+
+    <!-- Additional scripts go here -->
+
+</body>
+</html>

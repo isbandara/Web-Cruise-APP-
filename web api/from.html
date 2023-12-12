@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... (unchanged code) -->
+    <style>
+        <!-- ... (unchanged code) -->
+        tbody tr:hover {
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+
+        .book-now-button {
+            text-decoration: none;
+            color: #007BFF;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ... (unchanged code) -->
+
+    <section class="search-results">
+        <h2>Search Results</h2>
+        <div class="scrollable-table-container">
+            <table>
+                <thead>
+                    <!-- ... (unchanged code) -->
+                    <th>Action</th> <!-- Add a new column for the button link -->
+                </thead>
+                <tbody id="cruiseTableBody">
+                    <!-- Add cruise details dynamically here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2023 Cruise Reservations. All rights reserved.
+    </footer>
+
+    <script>
+        // Sample data for the table
+        var cruiseData = [
+            ["Cruise 1", "Departure 1", "Arrival 1", "Date 1", "Date 2", "Deck 1", "Standard", "100", "4.5", "7", "Provider 1", "Vegetarian", "Cabin A"],
+            ["Cruise 2", "Departure 2", "Arrival 2", "Date 3", "Date 4", "Deck 2", "Deluxe", "150", "4.8", "10", "Provider 2", "Non-Vegetarian", "Cabin B"],
+            // Add more cruise data as needed
+        ];
+
+        // Populate the table with cruise data
+        var cruiseTableBody = document.getElementById("cruiseTableBody");
+
+        cruiseData.forEach(function (data, index) {
+            var row = document.createElement("tr");
+            data.forEach(function (cellData) {
+                var cell = document.createElement("td");
+                cell.textContent = cellData;
+                row.appendChild(cell);
+            });
+
+            // Add click event to fill form fields
+            row.addEventListener("click", function () {
+                fillFormFields(data);
+            });
+
+            // Add "Book Now" button link in a new column
+            var bookNowCell = document.createElement("td");
+            var bookNowLink = document.createElement("a");
+            bookNowLink.href = "#"; // Add the appropriate link or action
+            bookNowLink.className = "book-now-button";
+            bookNowLink.textContent = "Book Now";
+            bookNowCell.appendChild(bookNowLink);
+            row.appendChild(bookNowCell);
+
+            cruiseTableBody.appendChild(row);
+        });
+
+        // Function to fill form fields with data
+        function fillFormFields(data) {
+            var form = document.getElementById("cruiseBookingForm");
+
+            // Assuming the order of form fields matches the order in the data array
+            form.elements["cruiseName"].value = data[0];
+            form.elements["departureDestination"].value = data[1];
+            form.elements["arrivalDestination"].value = data[2];
+            form.elements["departureDate"].value = data[3];
+            form.elements["arrivalDate"].value = data[4];
+            form.elements["deck"].value = data[5];
+            form.elements["cabinClass"].value = data[6];
+            form.elements["price"].value = data[7];
+            form.elements["rating"].value = data[8];
+            form.elements["duration"].value = data[9];
+            form.elements["cruiseProvider"].value = data[10];
+            form.elements["mealPreference"].value = data[11];
+            form.elements["cabinSelection"].value = data[12];
+        }
+    </script>
+</body>
+</html>
